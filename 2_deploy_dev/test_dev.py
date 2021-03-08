@@ -25,4 +25,5 @@ def test_missing_param(params):
     }
     prediction = client.predict_record(params["api_endpoint_id"], record_to_predict)
     assert prediction['result']['ignored'] == False , "Request status status should be ignored = false is {}".format(prediction['result'])
+    #assert prediction['result']['ignored'] == True , "Request status status should be ignored = true is {}".format(prediction['result'])
     assert prediction['result']['ignoreReason'] == "IGNORED_BY_MODEL" , "Reason should be IGNORED_BY_MODELbut is {}".format(prediction['result'])
